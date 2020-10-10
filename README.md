@@ -16,7 +16,7 @@ One of the leading causes of worker injuries is ergonomics, where factory worker
 Build a model that is able to detect hazardous poses such as lifting items overhead, bending over, etc. in live time.
 
 ### Built With
-* PoseNet model (imported)
+* PoseNet model
 * JavaScript
 * HTML
 * CSS
