@@ -2,7 +2,7 @@
   <h3 align="center">SafePose</h3>
 
   <p align="center">
-    *An approach to more ergonomic and healthy lifestyles with hazardous pose detection*
+  <em>An approach to more ergonomic and healthy lifestyles with hazardous pose detection</em>
   </p>
 </p>
 
