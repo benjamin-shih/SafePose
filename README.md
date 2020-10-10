@@ -17,6 +17,7 @@ Through the use of computer vision, we can help risk/safety managers to manage t
 Build a model that is able to detect hazardous poses such as lifting items overhead, bending over, etc. in live time.
 
 ### Built With
+* PoseNet model (imported)
 * JavaScript
 * HTML
 * CSS
