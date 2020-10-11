@@ -19,5 +19,5 @@ Build a model that is able to detect hazardous poses such as lifting items overh
 * PoseNet model
 * JavaScript
 * HTML
-* CSS
+* CSS  
 We used PoseNet from ml5.js for pose detection and we used p5.js for marking the specific keypoints and drawing the skeleton. We used machine learning for detecting potentially dangerous poses and notifying the person.
