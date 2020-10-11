@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="sample.css">
+    <script language="javascript" type="text/javascript"> 
+
+        function changevid(buttonlink){ 
+        
+        document.getElementById('video').src = buttonlink;
+        
+        }
+        
+        </script>
+</head>
+<body>
+    
+    <div class="navbar">
+        <ul>
+            <li><a class="l-float" href="index.html">Home</a></li>    
+            <li><a class="r-float" href="aboutus.html">About us</a></li>
+            <li><a id="blue-btn" class="r-float" href="">Samples</a></li>
+        </ul>
+    </div>
+    
+
+    <div class="container">
+
+        <div class="box">
+            <video controls id="video" autoplay=true loop=true muted=true>
+                <source src="samples/factory1.mp4" type="video/mp4"></source>
+            </video>
+              
+        </div>
+            <div class="box-wrapper">
+                <div class="small-box s-box1"> 
+                    <button onClick="changevid('samples/factory1.mp4')">
+                        <img src="samples/factory1.PNG" alt="Read book" style="width:100%">
+                        <br>Sample 2
+                    </button>
+                </div>
+                <div class="small-box s-box2"> 
+                    <button onClick="changevid('samples/factory2.mp4')">
+                        <img src="samples/factory2.PNG" alt="Read book" style="width:100%">
+                        <br>Sample 2
+                    </button>
+                </div>
+                <div class="small-box s-box3">
+                    <button onClick="changevid('samples/factory3.mp4')">
+                        <img src="samples/factory3.PNG" alt="Read book" style="width:100%">
+                        <br>Sample 3
+                    </button>
+                </div>
+                <div class="small-box s-box4">
+                    <button onClick="changevid('samples/factory4.mp4')">
+                        <img src="samples/factory4.PNG" alt="Read book" style="width:100%">
+                        <br>Sample 4
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        
+</body>
+</html>  
+

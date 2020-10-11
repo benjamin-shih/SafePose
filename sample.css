@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.navbar {
+  background-color: #051923;
+  height: 50px;
+}
+
+ul {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  list-style-type: none;
+  overflow: auto;
+}
+
+ul li {
+  display: inline;
+  margin-top: 5px;
+}
+
+ul li a {
+  background-color: #456990;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px transparent solid;
+  margin-top: 5px;
+  margin-right: 40px;
+  border-radius: 10px;
+  color: white;
+}
+
+.r-float {
+  float: right;
+}
+
+.l-float {
+  float: left;
+}
+
+#blue-btn {
+  background-color: #f75b00;
+}
+
+.container {
+  height: 91vh;
+  background-color: #003554;
+  border: 2px black solid;
+  overflow: auto;
+  position: relative;
+}
+
+.box {
+  height: 300px;
+  width: 400px;
+  box-shadow: 5px 10px;
+  border-radius: 50px;
+  border: 2px white solid;
+  background-color: black;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box-wrapper {
+  height: 100px;
+  position: relative;
+  top: 80%;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  align-items: center;
+}
+
+.small-box {
+  height: 150px;
+  width: 150px;
+  margin: 10px 10px;
+  background-color: black;
+}
+
+.s-box1 {
+  position: absolute;
+  bottom: 0;
+}
+
+.s-box2 {
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+}
+
+.s-box3 {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+
+.s-box4 {
+  position: absolute;
+  left: 75%;
+  bottom: 0;
+}
+
+.box video {
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+}
