@@ -29,6 +29,10 @@ function loaded() {
 function draw() {
   image(video, 0, 0);
   getAndSet("<b>No Danger Detected!</b>", "<b>Going Good!</b>");
+  cl = document.getElementById("c1")
+  c1.outerHTML = c1.outerHTML.replace("e0774a", "6ceb63");
+  c2 = document.getElementById("c2")
+  c2.outerHTML = c2.outerHTML.replace("e0774a", "6ceb63");
 
   if (pose) {
     fill(255, 0, 0);
@@ -146,7 +150,11 @@ function degrees(angle) {
 function getAndSet(dangerText, infoText) {
   danger = document.getElementById("showDanger");
   info = document.getElementById("showInfo");
-
   danger.innerHTML = `<b> ${dangerText} </b>`;
   info.innerHTML = `<b> ${infoText} </b>`;
+  cl = document.getElementById("c1")
+  c1.outerHTML = c1.outerHTML.replace("6ceb63", "e0774a");
+  c2 = document.getElementById("c2")
+  c2.outerHTML = c2.outerHTML.replace("6ceb63", "e0774a");
+  
 }
