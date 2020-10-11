@@ -2,15 +2,16 @@ let posenet;
 let pose;
 let video;
 let skeleton;
-let conf = 0.50;
+let conf = 0.4;
 
 function setup() {
   createCanvas(600, 600);
   video = createCapture(VIDEO);
-  video.hide();
+  video.hide()
   posenet = ml5.poseNet(video, loaded);
   posenet.on('pose', gotPose);
 }
+
 
 function gotPose(poses) {
   if (poses.length > 0) {
@@ -23,13 +24,21 @@ function loaded() {
   console.log("PoseNet is Ready");
 }
 
+
+
 function draw() {
   image(video, 0, 0);
+  getAndSet("<b>No Danger Detected!</b>", "<b>Going Good!</b>");
+
   if (pose) {
     fill(255, 0, 0);
     eyeL = pose.leftEye;
     eyeR = pose.rightEye;
-    d = dist(eyeL.x, eyeL.y, eyeR.x, eyeR.y);
+    if (eyeL.confidence > conf && eyeR.confidence > conf) {
+      d = dist(eyeL.x, eyeL.y, eyeR.x, eyeR.y);
+    } else {
+      d = 64;
+    }
 
     for (let i = 0; i < pose.keypoints.length; i++) {
       fill(0, 255, 255);
@@ -56,7 +65,8 @@ function draw() {
     resh = calcAngle(pose.rightElbow, pose.rightShoulder, pose.rightHip);
     if (resh) {
       if (resh > 130) {
-        console.log("Potentially Dangerous Pose!");
+        getAndSet("Potentially Dangerous Pose!", "Move your arms Lower!");
+        console.log("Potentially Dangerous Pose!")
         console.log("Move your right arm Lower!");
       }
     }
@@ -64,6 +74,7 @@ function draw() {
     lesh = calcAngle(pose.leftElbow, pose.leftShoulder, pose.leftHip);
     if (lesh) {
       if (lesh > 130) {
+        getAndSet("Potentially Dangerous Pose!", "Move your arms Lower!");
         console.log("Potentially Dangerous Pose!");
         console.log("Move your left arm Lower!");
       }
@@ -74,6 +85,7 @@ function draw() {
       if (rwes) {
         console.log("RIGHT ELBOW AND WRIST: ", rwes);
         if (rwes < 90) {
+          getAndSet("Potentially Dangerous Pose!", "Extend your arms more!");
           console.log("Potentially Dangerous Pose!");
           console.log("Extend your right arm more!");
         }
@@ -85,6 +97,7 @@ function draw() {
       if (lwes) {
         console.log("LEFT ELBOW AND WRIST: ", lwes);
         if (lwes < 90) {
+          getAndSet("Potentially Dangerous Pose!", "Extend your arms more!");
           console.log("Potentially Dangerous Pose!");
           console.log("Extend your left arm more!");
         }
@@ -94,20 +107,22 @@ function draw() {
 
     // BENDING INJURIES
     rshk = calcAngle(pose.rightShoulder, pose.rightHip, pose.rightKnee);
-    if (rshk){
+    if (rshk) {
       console.log("RIGHT BEND: ", rshk);
-      if (rshk < 50){
+      if (rshk < 50) {
+        console.log("Potentially Dangerous Pose!", "Stand back up straight slowly!");
         console.log("Potentially Dangerous Pose!");
         console.log("Stand back up straight slowly!");
       }
     }
 
     lshk = calcAngle(pose.leftShoulder, pose.leftHip, pose.leftKnee);
-    if (lshk){
-      console.log("LEFT BEND: ", Lshk);
-      if (lshk < 50){
+    if (lshk) {
+      console.log("LEFT BEND: ", lshk);
+      if (lshk < 50) {
+        console.log("Potentially Dangerous Pose!", "Stand back up straight slowly!");
         console.log("Potentially Dangerous Pose!");
-        console.log("Stand back up straight slowly!"); 
+        console.log("Stand back up straight slowly!");
       }
     }
   }
@@ -128,6 +143,10 @@ function degrees(angle) {
   return angle * (180 / Math.PI);
 }
 
-function overhead() {
-  return true;
+function getAndSet(dangerText, infoText) {
+  danger = document.getElementById("showDanger");
+  info = document.getElementById("showInfo");
+
+  danger.innerHTML = `<b> ${dangerText} </b>`;
+  info.innerHTML = `<b> ${infoText} </b>`;
 }

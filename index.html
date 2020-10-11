@@ -1,80 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Responsive Navigation Bar - W3jar.Com</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="container">
-    <div class="logo">
-        <a href="#"><img src="logo.png" alt="logo"></a>
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="active" href="home.html">Home</a>
+      <div class="topnav-right">
+        <a href="sample.html">Samples</a>
+        <a href="aboutus.html">About Us</a>
+      </div>
     </div>
-<div class="navbar">
+    <br>
+    <script src="sketch.js"></script>
 
-<div class="icon-bar" onclick="Show()">
-    <i></i>
-    <i></i>
-    <i></i>
-</div>
-
-<ul id="nav-lists">
-    <li class="close"><span onclick="Hide()">×</span></li>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="aboutus.html">About</a></li>
-    <li><a href="#">Contact</a></li>
-</ul>
-
-</div>
-</div>
-<div class="body">
-  <div id="container">
-  <video autoplay="true" id="videoElement">
-  
-  </video>
-</div>
-<script>
-  var video = document.querySelector("#videoElement");
-
-if (navigator.mediaDevices.getUserMedia) {
-  navigator.mediaDevices.getUserMedia({ video: true })
-    .then(function (stream) {
-      video.srcObject = stream;
-    })
-    .catch(function (err0r) {
-      console.log("Something went wrong!");
-    });
-}
-function stop(e) {
-  var stream = video.srcObject;
-  var tracks = stream.getTracks();
-
-  for (var i = 0; i < tracks.length; i++) {
-    var track = tracks[i];
-    track.stop();
-  }
-
-  video.srcObject = null;
-}
-
-</script>
+    <div class="center1">
+      <p id="showDanger"><b>No Danger Detected!</b></p>
+    </div>
+    <div class="center2">
+      <p id="showInfo"><b>Going Good!</b></p>
+    </div>
     
-</div>
-
-<script>
-var navList = document.getElementById("nav-lists");
-function Show() {
-navList.classList.add("_Menus-show");
-}
-
-function Hide(){
-navList.classList.remove("_Menus-show");
-}
-</script>
-
-</body>
+  </body>
 </html>
