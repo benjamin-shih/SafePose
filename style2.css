@@ -1,0 +1,128 @@
+html {
+  box-sizing: border-box;
+}
+body{
+  background-color: black;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  margin-top: 100px;
+  margin-bottom: 16px;
+  padding: 0 10px;
+  border-radius: 50px;
+
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.container {
+  margin-top: 60px;
+  text-align: center;
+  padding: 0 16px;
+  background: rgba(238, 238, 238, 0.61);
+
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: #9cfdff;
+  font-weight: bold;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/*navbar*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+
+    background-color: #051923;
+    height: 50px;
+}
+
+ul {
+
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+    overflow: auto;
+}
+
+ul li {
+    display: inline;
+    margin-top: 5px;
+    
+
+        
+}
+
+ul li a{
+    background-color: #456990;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px transparent solid;
+    margin-top: 5px;
+    margin-right: 40px;
+    border-radius: 10px;
+    color: white;
+}
+.r-float {
+
+
+    float: right;
+
+}
+
+
+.l-float {
+
+    float: left;
+
+}
+
+#blue-btn {
+    background-color: #F75B00;
+}
