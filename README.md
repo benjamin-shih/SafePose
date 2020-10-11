@@ -1,5 +1,5 @@
 <p align="center">
-  <h3 align="center">SafePose</h3>
+  <h3 align="center"><a href="injuryfree.space" target="_blank">SafePose</a></h3>
 
   <p align="center">
   <em>An approach to more ergonomic and healthy lifestyles with hazardous pose detection</em>
